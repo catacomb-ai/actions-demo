@@ -9,6 +9,7 @@ env:
   CATACOMB_SYSTEM_NAME: sentiment-classifier
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKER_REPO: "registry.hub.docker.com"
 
 jobs:
   setup-build-publish-deploy:
