@@ -1,0 +1,36 @@
+name: Build and publish catacomb image
+
+on:
+  push:
+    branches:
+    - master
+
+env:
+  CATACOMB_SYSTEM_NAME: sentiment-classifier
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+    - name: Install catacomb cli
+      run: |
+        python -m pip install --upgrade pip
+        pip install catacomb-ai==0.1.17
+
+    - name: Build catacomb image
+      run: |
+        catacomb build
+
+    - name: Publish catacomb image
+      run: |
+        catacomb push
