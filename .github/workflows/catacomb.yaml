@@ -10,6 +10,7 @@ env:
   DOCKER_USERNAME: pwpon500
   DOCKER_USER: pwpon500
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKER_REPO: docker.io
 
 jobs:
   setup-build-publish-deploy:
