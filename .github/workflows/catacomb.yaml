@@ -9,7 +9,6 @@ env:
   CATACOMB_SYSTEM_NAME: sentiment-classifier
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  DOCKER_REPO: "registry.hub.docker.com"
 
 jobs:
   setup-build-publish-deploy:
@@ -28,7 +27,7 @@ jobs:
     - name: Install catacomb cli
       run: |
         python -m pip install --upgrade pip
-        pip install catacomb-ai==0.1.17
+        pip install catacomb-ai==0.0.14
 
     - name: Build catacomb image
       run: |
