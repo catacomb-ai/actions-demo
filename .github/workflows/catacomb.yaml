@@ -8,7 +8,6 @@ on:
 env:
   CATACOMB_SYSTEM_NAME: sentiment-classifier
   DOCKER_USERNAME: pwpon500
-  DOCKER_USER: pwpon500
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   DOCKER_REPO: docker.io
 
@@ -29,7 +28,7 @@ jobs:
     - name: Install catacomb cli
       run: |
         python -m pip install --upgrade pip
-        pip install catacomb-ai==0.1.18
+        pip install catacomb-ai==0.1.19
 
     - name: Build catacomb image
       run: |
