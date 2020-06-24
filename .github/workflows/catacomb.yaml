@@ -7,6 +7,8 @@ on:
 
 env:
   CATACOMB_SYSTEM_NAME: sentiment-classifier
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 jobs:
   setup-build-publish-deploy:
